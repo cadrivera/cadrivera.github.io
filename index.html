@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Carlos Rivera | Portfolio</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #f5f5f5;
+            background: #101114;
+        }
+
+        header {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .hero {
+            max-width: 800px;
+            animation: fadeUp 1s ease-out;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+        }
+
+        .subtitle {
+            margin-bottom: 30px;
+            color: #b5b5b5;
+            font-size: 1.25rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            color: #101114;
+            background: #ffffff;
+            border-radius: 6px;
+            text-decoration: none;
+            transition:
+                transform 0.2s ease,
+                opacity 0.2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-3px);
+            opacity: 0.85;
+        }
+
+        section {
+            max-width: 1000px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            padding: 25px;
+            background: #1b1d22;
+            border: 1px solid #2d3038;
+            border-radius: 10px;
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: #777777;
+        }
+
+        footer {
+            padding: 30px 20px;
+            color: #999999;
+            text-align: center;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="hero">
+            <p>Hello, I am</p>
+
+            <h1>Carlos Rivera</h1>
+
+            <p class="subtitle">
+                Welcome to my personal portfolio.
+            </p>
+
+            <a class="button" href="#projects">
+                View my work
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+
+            <p>
+                Write a short personal introduction here.
+                Describe your interests, experience, and the
+                type of work you enjoy.
+            </p>
+        </section>
+
+        <section id="projects">
+            <h2>Selected Projects</h2>
+
+            <div class="project-grid">
+                <article class="project-card">
+                    <h3>Project One</h3>
+
+                    <p>
+                        A short description of the project,
+                        your role, and the technologies used.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Project Two</h3>
+
+                    <p>
+                        Add another project or portfolio item
+                        here.
+                    </p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Project Three</h3>
+
+                    <p>
+                        Add screenshots, links, and a short
+                        explanation later.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Carlos Rivera</p>
+    </footer>
+</body>
+</html>
