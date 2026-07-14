@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta
         name="description"
-        content="Carlos Rivera's portfolio — selected projects, skills, and ways to get in touch."
+        content="Carlos Alipio D. Rivera — financial systems, core banking, and enterprise technology portfolio."
     >
     <meta name="theme-color" content="#f4f3ef">
 
@@ -13,14 +13,15 @@
 
     <style>
         :root {
-            --ink: #18201c;
-            --muted: #657069;
-            --paper: #f4f3ef;
-            --surface: #fbfaf7;
-            --line: #d9ddd7;
-            --accent: #1f6b4f;
-            --accent-dark: #174f3c;
-            --accent-soft: #dcebe4;
+            --ink: #13231e;
+            --muted: #5f6d67;
+            --paper: #f3f5f1;
+            --surface: #fafbf8;
+            --line: #d5dcd6;
+            --accent: #146044;
+            --accent-dark: #0d4933;
+            --accent-soft: #dce9e1;
+            --gold: #b99652;
             --max-width: 1160px;
             --shadow: 0 24px 60px rgba(35, 48, 41, 0.08);
         }
@@ -41,6 +42,11 @@
                 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
                 "Segoe UI", sans-serif;
             line-height: 1.6;
+        }
+
+        ::selection {
+            color: #ffffff;
+            background: var(--accent);
         }
 
         a {
@@ -93,14 +99,15 @@
         }
 
         .brand-mark {
-            width: 2rem;
-            height: 2rem;
+            width: 2.55rem;
+            height: 2.55rem;
             display: grid;
             place-items: center;
             color: #ffffff;
             background: var(--accent);
-            border-radius: 50%;
-            font-size: 0.72rem;
+            border-radius: 0.55rem;
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
         }
 
         .nav-links {
@@ -137,6 +144,7 @@
         }
 
         .hero {
+            position: relative;
             min-height: calc(100vh - 76px);
             display: grid;
             grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
@@ -144,6 +152,18 @@
             gap: clamp(3rem, 8vw, 7rem);
             padding-top: 5rem;
             padding-bottom: 5rem;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0 calc((100vw - 100%) / -2);
+            z-index: -1;
+            background-image:
+                linear-gradient(rgba(19, 35, 30, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(19, 35, 30, 0.035) 1px, transparent 1px);
+            background-size: 72px 72px;
+            mask-image: linear-gradient(to bottom, #000000, transparent 92%);
         }
 
         .eyebrow {
@@ -176,7 +196,7 @@
             max-width: 790px;
             margin-bottom: 1.5rem;
             font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(3.4rem, 8vw, 7.25rem);
+            font-size: clamp(3.15rem, 7.4vw, 6.8rem);
             font-weight: 500;
             letter-spacing: -0.065em;
             line-height: 0.93;
@@ -192,6 +212,34 @@
             margin-bottom: 2.2rem;
             color: var(--muted);
             font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+        }
+
+        .hero-proof {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.4rem;
+            margin: 2rem 0 0;
+            padding: 0;
+            color: var(--muted);
+            list-style: none;
+            font-size: 0.76rem;
+            font-weight: 750;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .hero-proof li {
+            display: flex;
+            align-items: center;
+            gap: 0.55rem;
+        }
+
+        .hero-proof li::before {
+            content: "";
+            width: 0.35rem;
+            height: 0.35rem;
+            background: var(--gold);
+            border-radius: 50%;
         }
 
         .button-row {
@@ -248,7 +296,7 @@
             justify-content: space-between;
             padding: clamp(1.7rem, 4vw, 2.5rem);
             background: var(--ink);
-            border-radius: 1.5rem;
+            border-radius: 0.9rem;
             box-shadow: var(--shadow);
             overflow: hidden;
         }
@@ -303,6 +351,33 @@
         .hero-card-content {
             position: relative;
             z-index: 1;
+        }
+
+        .focus-list {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            margin: 2.2rem 0 0;
+            padding: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            list-style: none;
+        }
+
+        .focus-list li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            color: #dbe4de;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .focus-list span {
+            color: #82948a;
+            font-family: Georgia, "Times New Roman", serif;
         }
 
         .hero-card-label {
@@ -408,7 +483,7 @@
             padding: 1.6rem;
             background: #222c27;
             border: 1px solid #344039;
-            border-radius: 1.1rem;
+            border-radius: 0.65rem;
             transition:
                 transform 220ms ease,
                 border-color 220ms ease;
@@ -426,6 +501,15 @@
             font-size: 3.8rem;
             letter-spacing: -0.06em;
             line-height: 1;
+        }
+
+        .project-category {
+            margin-bottom: 0.7rem;
+            color: #86c6a9;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
         }
 
         .project-card h3 {
@@ -457,6 +541,23 @@
             font-weight: 700;
         }
 
+        .project-status {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1.4rem;
+            padding-top: 1rem;
+            color: #819087;
+            border-top: 1px solid #344039;
+            font-size: 0.72rem;
+            font-weight: 700;
+        }
+
+        .project-status span:last-child {
+            color: #c8d4cd;
+        }
+
         .expertise-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -478,7 +579,9 @@
             margin-bottom: 2.5rem;
             color: var(--accent);
             font-family: Georgia, "Times New Roman", serif;
-            font-size: 1rem;
+            font-size: 0.78rem;
+            font-weight: 750;
+            letter-spacing: 0.1em;
         }
 
         .expertise-item h3 {
@@ -499,7 +602,8 @@
             gap: 2rem;
             padding: clamp(2rem, 6vw, 4.5rem);
             background: var(--accent-soft);
-            border-radius: 1.5rem;
+            border: 1px solid #c9dbcf;
+            border-radius: 0.9rem;
         }
 
         .contact-card h2 {
@@ -647,7 +751,7 @@
 
     <header class="site-header">
         <nav class="nav" aria-label="Main navigation">
-            <a class="brand" href="#top" aria-label="Carlos Rivera — back to top">
+            <a class="brand" href="#top" aria-label="Carlos Alipio D. Rivera — back to top">
                 <span class="brand-mark" aria-hidden="true">CADR</span>
                 <span class="brand-name">Carlos Alipio D. Rivera</span>
             </a>
@@ -664,11 +768,12 @@
     <main id="main-content">
         <section class="section hero" id="top">
             <div>
-                <p class="eyebrow">Personal portfolio</p>
-                <h1>Carlos Alipio<span>Rivera.</span></h1>
+                <p class="eyebrow">Carlos Alipio D. Rivera · Systems portfolio</p>
+                <h1>Financial systems <span>built to endure.</span></h1>
                 <p class="hero-copy">
-                    I turn ideas into thoughtful, dependable digital experiences —
-                    with a focus on clarity, craft, and real-world impact.
+                    I focus on the technology behind core banking, financial
+                    operations, and essential business systems — where reliability,
+                    clarity, and control matter every day.
                 </p>
 
                 <div class="button-row">
@@ -684,18 +789,30 @@
                         GitHub profile <span aria-hidden="true">↗</span>
                     </a>
                 </div>
+
+                <ul class="hero-proof" aria-label="Areas of focus">
+                    <li>Core banking</li>
+                    <li>Financial operations</li>
+                    <li>Business systems</li>
+                </ul>
             </div>
 
             <aside class="hero-card" aria-label="Portfolio summary">
-                <span class="availability">Open to meaningful work</span>
+                <span class="availability">Systems that support the business</span>
 
                 <div class="hero-card-content">
-                    <p class="hero-card-label">What I care about</p>
-                    <h2>Useful work, built with intention.</h2>
+                    <p class="hero-card-label">Domain focus</p>
+                    <h2>Dependable technology for critical operations.</h2>
                     <p>
-                        Combining technical thinking and careful execution to create
-                        solutions people can rely on.
+                        Connecting business needs, sound architecture, and disciplined
+                        delivery across the systems that keep organizations moving.
                     </p>
+
+                    <ul class="focus-list">
+                        <li>Banking platforms <span>01</span></li>
+                        <li>System integration <span>02</span></li>
+                        <li>Operational tooling <span>03</span></li>
+                    </ul>
                 </div>
             </aside>
         </section>
@@ -703,99 +820,139 @@
         <section class="section about-grid" id="about">
             <div>
                 <p class="eyebrow">About</p>
-                <h2>A practical mind with an eye for detail.</h2>
+                <h2>Technology grounded in how the business works.</h2>
             </div>
 
             <div class="about-copy">
                 <p>
-                    I enjoy working through complex problems and shaping them into
-                    simple, useful experiences. My approach balances thoughtful
-                    planning with hands-on building, always keeping the people who
-                    will use the result in view.
+                    Financial and enterprise systems sit at the center of complex
+                    organizations. I enjoy understanding those operating realities,
+                    translating them into clear technical decisions, and building
+                    solutions that people can trust in their day-to-day work.
                 </p>
                 <p>
-                    This site is a growing collection of the projects, experiments,
-                    and lessons that best represent how I think and work.
+                    My approach balances reliability and control with practical
+                    delivery. This portfolio is a growing record of work across core
+                    platforms, integrations, process automation, and business tools.
                 </p>
             </div>
         </section>
 
         <section class="section projects-section" id="projects">
             <div class="section-heading">
-                <p class="eyebrow">Selected projects</p>
-                <h2>Work worth sharing.</h2>
+                <p class="eyebrow">Selected systems work</p>
+                <h2>Built around critical operations.</h2>
                 <p>
-                    A home for the projects that show the problem, the process, and
-                    the outcome — not just the finished screen.
+                    Case studies will document the operating context, technical
+                    decisions, delivery approach, and measurable business outcome.
                 </p>
             </div>
 
             <div class="project-grid">
                 <article class="project-card">
                     <span class="project-number" aria-hidden="true">01</span>
-                    <h3>Featured project</h3>
+                    <p class="project-category">Banking platform</p>
+                    <h3>Core Banking Systems</h3>
                     <p>
-                        Your strongest project belongs here, with a short summary of
-                        the challenge you solved and the impact of your work.
+                        Technology supporting deposits, customer accounts,
+                        transactions, and the controlled processing at the heart of a
+                        financial institution.
                     </p>
-                    <ul class="tag-list" aria-label="Project status">
-                        <li>Case study soon</li>
+                    <ul class="tag-list" aria-label="Project themes">
+                        <li>Core processing</li>
+                        <li>Reliability</li>
                     </ul>
+                    <div class="project-status">
+                        <span>Case study</span>
+                        <span>In preparation</span>
+                    </div>
                 </article>
 
                 <article class="project-card">
                     <span class="project-number" aria-hidden="true">02</span>
-                    <h3>Technical project</h3>
+                    <p class="project-category">Enterprise integration</p>
+                    <h3>Financial System Integration</h3>
                     <p>
-                        Highlight the tools, systems, or technical decisions that made
-                        this project interesting and effective.
+                        Reliable connections between banking platforms, payment
+                        services, reporting tools, and the applications used across
+                        the wider organization.
                     </p>
-                    <ul class="tag-list" aria-label="Project status">
-                        <li>Details soon</li>
+                    <ul class="tag-list" aria-label="Project themes">
+                        <li>APIs</li>
+                        <li>Data exchange</li>
                     </ul>
+                    <div class="project-status">
+                        <span>Case study</span>
+                        <span>In preparation</span>
+                    </div>
                 </article>
 
                 <article class="project-card">
                     <span class="project-number" aria-hidden="true">03</span>
-                    <h3>Experiment or side project</h3>
+                    <p class="project-category">Business operations</p>
+                    <h3>Enterprise Business Systems</h3>
                     <p>
-                        Share something exploratory that demonstrates curiosity,
-                        independent thinking, or a new skill in progress.
+                        Internal platforms and workflow tools that make processes more
+                        visible, reduce manual effort, and support better operational
+                        decisions.
                     </p>
-                    <ul class="tag-list" aria-label="Project status">
-                        <li>In progress</li>
+                    <ul class="tag-list" aria-label="Project themes">
+                        <li>Workflow</li>
+                        <li>Automation</li>
                     </ul>
+                    <div class="project-status">
+                        <span>Case study</span>
+                        <span>In preparation</span>
+                    </div>
                 </article>
             </div>
         </section>
 
         <section class="section" id="expertise">
             <div class="section-heading">
-                <p class="eyebrow">How I work</p>
-                <h2>From ambiguity to a clear result.</h2>
+                <p class="eyebrow">Systems expertise</p>
+                <h2>Across the financial technology landscape.</h2>
                 <p>
-                    A straightforward process for understanding the need, making good
-                    decisions, and delivering work that holds up.
+                    Focus areas spanning transaction platforms, connected business
+                    applications, and the operational disciplines around them.
                 </p>
             </div>
 
             <div class="expertise-grid">
                 <article class="expertise-item">
-                    <span>01</span>
-                    <h3>Understand</h3>
-                    <p>Start with context, constraints, and the real problem to solve.</p>
+                    <span>01 · PLATFORM</span>
+                    <h3>Core Banking</h3>
+                    <p>Account, deposit, transaction, and customer-facing capabilities.</p>
                 </article>
 
                 <article class="expertise-item">
-                    <span>02</span>
-                    <h3>Shape</h3>
-                    <p>Turn possibilities into a focused direction and practical plan.</p>
+                    <span>02 · CONNECT</span>
+                    <h3>Integration</h3>
+                    <p>APIs, data exchange, and dependable connections between systems.</p>
                 </article>
 
                 <article class="expertise-item">
-                    <span>03</span>
-                    <h3>Build</h3>
-                    <p>Create carefully, test the details, and refine what matters.</p>
+                    <span>03 · OPERATE</span>
+                    <h3>Business Systems</h3>
+                    <p>Tools and workflows that support teams and operating processes.</p>
+                </article>
+
+                <article class="expertise-item">
+                    <span>04 · CONTROL</span>
+                    <h3>Data &amp; Reporting</h3>
+                    <p>Clear information flows for oversight, reconciliation, and decisions.</p>
+                </article>
+
+                <article class="expertise-item">
+                    <span>05 · IMPROVE</span>
+                    <h3>Modernization</h3>
+                    <p>Practical evolution of legacy platforms, processes, and interfaces.</p>
+                </article>
+
+                <article class="expertise-item">
+                    <span>06 · ASSURE</span>
+                    <h3>Reliability</h3>
+                    <p>Careful delivery for systems where continuity and accuracy matter.</p>
                 </article>
             </div>
         </section>
@@ -804,10 +961,11 @@
             <div class="contact-card">
                 <div>
                     <p class="eyebrow">Get in touch</p>
-                    <h2>Let’s make something useful.</h2>
+                    <h2>Let’s build systems the business can depend on.</h2>
                     <p>
-                        Have a project, an opportunity, or an interesting problem to
-                        discuss? You can find me and follow my latest work on GitHub.
+                        Have a banking platform, integration challenge, or operational
+                        system to discuss? You can find me and follow my latest work on
+                        GitHub.
                     </p>
                 </div>
 
@@ -824,8 +982,8 @@
     </main>
 
     <footer>
-        <p>© 2026 Carlos Rivera</p>
-        <p>Designed and built with care.</p>
+        <p>© 2026 Carlos Alipio D. Rivera</p>
+        <p>Financial systems · Enterprise technology</p>
     </footer>
 </body>
 </html>
